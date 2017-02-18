@@ -1,0 +1,1 @@
+docker run -d -t --name="youtrack" -v /data/youtrack/data/:/opt/youtrack/data/ -v /data/youtrack/backup/:/opt/youtrack/backup/ -p 80:80 uniplug/youtrack
