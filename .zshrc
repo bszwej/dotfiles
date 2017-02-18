@@ -6,7 +6,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 DEFAULT_USER=$(whoami)
 
-plugins=(git web-search)
+plugins=(git docker sbt)
 
 source $ZSH/oh-my-zsh.sh
 
