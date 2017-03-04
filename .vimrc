@@ -1,3 +1,6 @@
+" Enable Pathogen
+execute pathogen#infect()
+
 " General
 set history=700 
 set autoread 
