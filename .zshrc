@@ -18,6 +18,9 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # Load custom user scripts
 export PATH="$PATH:$HOME/.custom-scripts"
 
+# Load exercism
+export PATH="$PATH:$HOME/Tools/exercism"
+
 # Powerlevel9k config
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vcs dir)
 export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
@@ -47,6 +50,9 @@ alias gsb='git status -sb'
 
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
+
+export PATH=$PATH:/home/bartomiej/.cache/rebar3/bin
+export PATH=$PATH:/home/bartomiej/Tools/kindlegen
 
 # SDKMAN
 export SDKMAN_DIR="$HOME/.sdkman"
