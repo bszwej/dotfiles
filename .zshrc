@@ -6,7 +6,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 DEFAULT_USER=$(whoami)
 
-plugins=(git docker sbt)
+plugins=(git docker sbt zsh-syntax-highlighting common-aliases)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -23,7 +23,7 @@ export PATH="$PATH:$HOME/Tools/exercism"
 
 # Powerlevel9k config
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vcs dir)
-export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
+export POWERLEVEL9K_DISABLE_RPROMPT=true
 
 # alt + s = sudo
 insert_sudo () { zle beginning-of-line; zle -U "sudo " }
