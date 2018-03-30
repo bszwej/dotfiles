@@ -1,39 +1,30 @@
 set nocompatible
-filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdtree'
+Plugin 'wincent/command-t'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 filetype plugin indent on
 
-" General
-set nu
-set encoding=utf-8
-set history=700 
-set autoread 
-set cmdheight=2 
-set ignorecase 
-set incsearch
-set hlsearch 
-set showmatch 
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 
-" Formatting
-syntax enable
+let NERDTreeShowHidden=1
+map <C-n> :NERDTreeToggle<CR>
+map <C-m> :NERDTreeFind<CR>
+
+syntax on
 colorscheme desert
+
 set background=dark
-
-" Mappings
-map <F2> :!%
-set ttimeout ttimeoutlen=50
-
-nmap <c-p> <c-w>l
-nmap <c-o> <c-w>k
-nmap <c-i> <c-w>j
-nmap <c-u> <c-w>h
+set number
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
 
