@@ -6,7 +6,8 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 DEFAULT_USER=$(whoami)
 
-plugins=(git docker sbt zsh-syntax-highlighting common-aliases)
+export EDITOR=vim
+plugins=(git docker sbt scala kubectl zsh-syntax-highlighting common-aliases zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -31,28 +32,20 @@ zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
 
 # Aliases
-alias c="clear"
-alias notes="atom $HOME/Dropbox/notes"
-
-alias g=git
-alias gaa='git add --all'
-alias gco='git checkout'
-alias gcam='git commit -a -m'
-alias gl='git pull'
-alias ggpull='git pull origin $(git_current_branch)'
-alias gp='git push'
-alias ggpush='git push origin $(git_current_branch)'
-alias gfa='git fetch --all --prune'
-alias gcm='git checkout master'
-alias gcd='git checkout develop'
-alias gcb='git checkout -b'
-alias gsb='git status -sb'
-
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
 
-export PATH=$PATH:/home/bartomiej/.cache/rebar3/bin
-export PATH=$PATH:/home/bartomiej/Tools/kindlegen
+alias temp='cd $(mktemp -d)'
+alias hg='history | grep'
+alias cpa='pwd | pbcopy'
+
+alias kc='kubectl'
+kca () { kubectl "$@" --all-namespaces }
+
+alias di='docker images'
+alias dp='docker ps'
+
+export KUBECONFIG=~/Tools/ysf-kubeconfig
 
 # SDKMAN
 export SDKMAN_DIR="$HOME/.sdkman"
